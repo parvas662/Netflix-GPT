@@ -1,6 +1,10 @@
 # Netflix-GPT
 - using Vite
 - Confiured TailwindCSS
+- Header
+- Routing of App
+- Login/Signup form
+- Form Validation   
 
 # Features
 - Login/signUp 
