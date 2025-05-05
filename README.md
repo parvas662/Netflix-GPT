@@ -12,7 +12,17 @@
     - Created Redux-Store with userSlice to store user signUp data.
     - Implement SignOut (using firebase API) 
     - Update Profile (using firebase API) 
-    -
+    - BugFix: SignUp user displayName and profile picture update
+    - BugFix:  if  the user is not logged in redirect "/browse" to Login page and vice-versa.
+    - Register TMDB API (movies database) and create an app and get Access Token.
+    - Get data from TMDB now playing movies list API
+    - Custom hook for Now Playing Movies 
+    - Create MovieSlice 
+    - Update store with movie Data
+    - planning for MainContainer and Secondary Container of Browse page.
+    - Fetch data for trailer video and Updated store with it.
+    - Embedded the youtube video
+    - 
 
 # Features >>
     - Login/signUp 
