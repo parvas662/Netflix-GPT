@@ -21,8 +21,10 @@
     - Update store with movie Data
     - planning for MainContainer and Secondary Container of Browse page.
     - Fetch data for trailer video and Updated store with it.
-    - Embedded the youtube video
-    - 
+    - Embedded the youtube video with autoPlay
+    - Build Secondary Component
+    - Build Movie List
+    - usePopularMovies Custom hook
 
 # Features >>
     - Login/signUp 

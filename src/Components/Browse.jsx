@@ -1,12 +1,14 @@
 
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import usePopularMovies from "../hooks/usePopularMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./Secondarycontainer";
 
 const Browse = () => {
     
     useNowPlayingMovies();
-    return <div>
+    usePopularMovies();
+    return <div >
         <MainContainer/>
         <SecondaryContainer/>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { API_Options } from "../Utils/constants";
 import { useDispatch } from "react-redux";
@@ -8,9 +9,9 @@ const useNowPlayingMovies  = ()=>{
 
     const dispatch = useDispatch();
     const getNowPlayingMovies = async () => {
-        const data = await fetch('https://api.themoviedb.org/3/movie/upcoming', API_Options)
+        const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', API_Options)
         const json = await data.json();
-        console.log(json)
+        
         dispatch(addNowPlayingMovies(json.results))
     } 
     useEffect(() => {
