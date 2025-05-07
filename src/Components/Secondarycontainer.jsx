@@ -4,16 +4,16 @@ import MovieList from "./MovieList";
 const SecondaryContainer = () => {
     const movies = useSelector((store) => store.movies);
     
-   console.log("popular",movies.popularMovies)
+   console.log("popular",movies)
     return (
         <div className="bg-black ">
             {/*MovieList component  */}
             <div className=" relative pl-5 -mt-66 z-20">
 
                 <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
+                <MovieList title={"UpComing "} movies={movies.upComingMovies} />
+                <MovieList title={"Top Rated "} movies={movies.topRatedMovies} />
                 <MovieList title={"Popular "} movies={movies.popularMovies} />
-                <MovieList title={"UpComing "} movies={movies.nowPlayingMovies} />
-                <MovieList title={"Trending "} movies={movies.nowPlayingMovies} />
 
             </div>
         </div>
