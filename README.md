@@ -24,7 +24,8 @@
     - Embedded the youtube video with autoPlay
     - Build Secondary Component
     - Build Movie List
-    - usePopularMovies Custom hook
+    - usePopularMovies,useUpComingMovies,useTopRatedMovies Custom hook
+    - GPT Search Feature
 
 # Features >>
     - Login/signUp 

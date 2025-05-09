@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { API_Options } from "../Utils/constants";
 import { useDispatch } from "react-redux";

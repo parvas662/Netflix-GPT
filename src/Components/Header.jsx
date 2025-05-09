@@ -6,14 +6,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { auth } from '../Utils/firebase';
 import { addUser, removeUser } from '../redux-store/userSlice';
+import { toggleGptSearchView } from '../redux-store/gptSlice';
+import { SUPPORTED_LANGUAGES } from '../Utils/constants';
+import { changeLanguage } from '../redux-store/configSlice';
 
 
 const Header = () => {
     const user = useSelector((store) => store.userData)
+    const toggleGptSearch = useSelector(store => store.gpt.showGptSearch)
     // Dispatching an action to appStore when user signup/signIn or logout. we can write it anywhere but inside or redux provider.
     const dispatch = useDispatch();
     const navigate = useNavigate(); // this hook should be inside of react router provider.         
-    
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {  // this will work only when user signIn/SignUp. it will dispatch the action to appStore.
             if (user) {
@@ -34,7 +38,7 @@ const Header = () => {
             }
         })
         // Unsubscribe when component unMount.
-        return ()=>unsubscribe();
+        return () => unsubscribe();
     }
         // eslint-disable-next-line react-hooks/exhaustive-deps
         , [])
@@ -42,18 +46,41 @@ const Header = () => {
     const handleSignOut = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
-           // navigate("/") this will take care by onauthstatechange function. 
+            // navigate("/") this will take care by onauthstatechange function. 
 
         }).catch((error) => {
-           // navigate("/error")
+            // navigate("/error")
         });
     }
     //console.log("location",location.pathname)
     // console.log("user",user)
+
+    const handleGptSearchView = () => {
+        // toggling GPT Search.
+        dispatch(toggleGptSearchView());
+    }
+
+    const handleLanguageChange = (e) => {
+        // change language 
+        console.log(e.target.value)
+        dispatch(changeLanguage(e.target.value))
+    }
+
     return (
-        <div className="absolute py-2 px-8 w-full bg-gradient-to-b from-black  z-10 flex justify-between">
+        <div className=" absolute py-2 px-8 w-full bg-gradient-to-b from-black z-10 flex justify-between">
             <img className='w-44 ' src={Netflix_Logo_PMS} alt="Netflix-Logo" />
             {(user) && <div className='flex items-center gap-1'>
+
+                {/* select box to chose prefered language */}
+                {toggleGptSearch && <select
+                    onChange={handleLanguageChange} className=" bg-gray-600 px-3 py-1 text-white outline-none rounded-md">
+                    {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier} > {lang.name} </option>)}
+                </select>}
+                {/*GPT search Button */}
+                <button className='m-4 cursor-pointer  px-4 py-1 rounded-md bg-purple-800 '
+                    onClick={handleGptSearchView} >
+                    {toggleGptSearch ? "Home " : "GPT Search"}
+                </button>
                 <img className="w-12 h-14 py-1 rounded-2xl"
                     src={user.photoURL} alt="userIcon" />
                 <button

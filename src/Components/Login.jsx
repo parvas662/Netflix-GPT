@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import { useRef, useState } from "react";
 import { ValidateData } from "../Utils/validate";
@@ -51,7 +52,7 @@ const Login = () => {
                     }).catch((error) => {
                         seterrorMessage(error.message)
                     })
-                    console.log(user)
+                    //console.log(user)
                 })
                 .catch((error) => {
                     //  const errorCode = error.code;
@@ -66,7 +67,7 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log(user)
+                    //console.log(user)
                  //   navigate("/browse")
                 })
                 .catch((error) => {

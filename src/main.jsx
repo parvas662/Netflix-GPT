@@ -6,8 +6,9 @@ import Login from './Components/Login.jsx'
 import Browse from './Components/browse.jsx'
 import appStore from './redux-store/appStore.js'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom' 
+import { GptSearch } from './Components/GPTSearch.jsx'
+   
 createRoot(document.getElementById('root')).render(
     <Provider store={appStore}>
         <BrowserRouter>
