@@ -25,7 +25,18 @@
     - Build Secondary Component
     - Build Movie List
     - usePopularMovies,useUpComingMovies,useTopRatedMovies Custom hook
-    - GPT Search Feature
+    - GPT Search Page
+    - GPT search Bar
+    - Multi-Language Feature in GPT Search Page
+    - Get Open AI Api Key
+    - Gpt Search API Call
+    - Fetched gptMoviesSuggestions from TMDB
+    - Created gptSlice added data
+    - Build suggestion container
+    - Memoization
+    - Added .env file
+    - Adding .env file to gitignore
+
 
 # Features >>
     - Login/signUp 

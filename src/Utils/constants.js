@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 
 export const API_Options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWUyOTliZmVjYjFlMWYxMTI0NjY3ZTAxMWEyOTFkNiIsIm5iZiI6MTc0NjQ0NTI2Ni40NjgsInN1YiI6IjY4MThhM2QyZmNmYTNkNzJhNzQ2MWE1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Z9UYL0gMKmYhqXLC6Fq9phzo8LqB6wbK1BuL-WVIwns'
-    }
+      Authorization: 'Bearer ' +   import.meta.env.VITE_TMDB_KEY, }
   };
   
 export const  Image_CDN_Url = "https://image.tmdb.org/t/p/w500/";
@@ -12,6 +12,7 @@ export const  Image_CDN_Url = "https://image.tmdb.org/t/p/w500/";
 export const SUPPORTED_LANGUAGES = [
   {identifier :"en",name: "English"},
   {identifier :"hindi",name: "Hindi"},
-  {identifier :"french",name: "French"},
-  
+  {identifier :"french",name: "French"}, 
 ]
+ 
+export const GeminiAI_key =  import.meta.env.VITE_GeminiAI_key;

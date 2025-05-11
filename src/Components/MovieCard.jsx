@@ -1,10 +1,11 @@
 import { Image_CDN_Url } from "../Utils/constants";
 
-const MovieCard = ({posterPath})=>{
-   //  .log("moviePoster",posterPath)
+const MovieCard = ({posterPath,movieTitle})=>{
+   //  console.log("moviePoster",posterPath)
+    if (!posterPath) return null
     return (
         <div  className="w-48 pr-4 ">
-            <img  src={Image_CDN_Url + posterPath} alt="movieCard" />
+            <img  src={Image_CDN_Url + posterPath} alt={movieTitle} />
                 </div>
     )
 }

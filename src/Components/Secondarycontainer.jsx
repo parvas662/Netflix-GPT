@@ -9,7 +9,6 @@ const SecondaryContainer = () => {
         <div className="bg-black ">
             {/*MovieList component  */}
             <div className=" relative pl-5 -mt-66 z-20">
-
                 <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
                 <MovieList title={"UpComing "} movies={movies.upComingMovies} />
                 <MovieList title={"Top Rated "} movies={movies.topRatedMovies} />

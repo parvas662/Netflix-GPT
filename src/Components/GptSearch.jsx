@@ -6,12 +6,12 @@ import backgroundImage from '../assets/backgroundImage.jpg';
 // this gptsearch is used in browse page.
 export const GptSearch =()=>{  
     return (
-        <div className="  bg-amber-950 ">
-            <div>
-                <img className="" src={backgroundImage} />
+        <div >
+            <div className="">
+                <img className="fixed top-0" src={backgroundImage} />
             </div> 
             <GptSeachBar/>
             <GptMovieSuggestion/> 
         </div>
     )
-}
+} 

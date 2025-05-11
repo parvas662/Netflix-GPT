@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { API_Options } from "../Utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailerVideo } from "../redux-store/moviesSlice";
 
 // fetching trailer video and used in videoBackgreound component.
@@ -9,6 +9,7 @@ import { addTrailerVideo } from "../redux-store/moviesSlice";
     
 const useMovieTrailer = (movieId)=>{
     const dispatch  = useDispatch();
+    const trailerVideo = useSelector(store => store.movies.trailerVideo);
     
     const getMovieTrailer = async () => {
         const data = await fetch(`https://api.themoviedb.org/3/movie/${movieId.movieId}/videos?language=en-US`, API_Options)
@@ -17,11 +18,10 @@ const useMovieTrailer = (movieId)=>{
         const filterData = json?.results?.filter(video => video.type === "Trailer");
         const trailer = filterData[0]
         dispatch(addTrailerVideo(trailer))
-        
     }
 
     useEffect(() => {
-        getMovieTrailer();
+        (!trailerVideo) && getMovieTrailer();
     }, [])
 
 }
