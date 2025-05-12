@@ -7,8 +7,8 @@ import backgroundImage from '../assets/backgroundImage.jpg';
 export const GptSearch =()=>{  
     return (
         <div >
-            <div className="">
-                <img className="fixed top-0" src={backgroundImage} />
+            <div className=" ">
+                <img className="fixed h-screen w-[100%] object-cover " src={backgroundImage} />
             </div> 
             <GptSeachBar/>
             <GptMovieSuggestion/> 

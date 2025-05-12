@@ -28,7 +28,7 @@
     - GPT Search Page
     - GPT search Bar
     - Multi-Language Feature in GPT Search Page
-    - Get Open AI Api Key
+    - Get Gemini-AI Api Key
     - Gpt Search API Call
     - Fetched gptMoviesSuggestions from TMDB
     - Created gptSlice added data
