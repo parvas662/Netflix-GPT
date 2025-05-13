@@ -2,9 +2,9 @@
 
 const VideoTitle = ({ title, overview }) => {
     return (
-        <div className="  pt-0 px-0 sm:md:pt-0 sm:md:px-0 absolute top-40 left-4 sm:md:top-50 sm:md:left-11 w-fit text-white/80   ">
-                <h1 className="text-2xl  sm:md:text-4xl font-bold" >{title}</h1>
-                <p className="hidden sm:hidden md:hidden xl:block sm:md:py-6 sm:md:text-sm md:pr-6 sm:w-[40%] md:w-[50%] xl:w-[40%]">{overview}</p>
+        <div className="absolute w-fit  top-40 left-4 sm:md:top-50 sm:md:left-11  text-white/80   ">
+                <h1 className="text-2xl w-fit sm:md:text-4xl font-bold " >{title}</h1>
+                <p className=" hidden sm:hidden md:hidden xl:block sm:md:py-6 sm:md:text-sm md:pr-6 sm:w-[40%] md:w-[50%] xl:w-[40%]">{overview}</p>
 
                 <div className="w-fit  flex gap-3 mt-4 md:mt-4 xl:mt-0 ">
                     <button className="outline-0 text-black cursor-pointer px-2 md:px-8  md:py-2 bg-white hover:bg-white/80 flex items-center  font-medium rounded-sm">

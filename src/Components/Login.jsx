@@ -81,13 +81,13 @@ const Login = () => {
 
     return (
         <div >
-            <img className="" src={backgroundImage} />
+            <img className="w-screen h-screen fixed bottom-0 object-cover " src={backgroundImage} />
 
             <form
                 onSubmit={(e) => { e.preventDefault() }}
-                className=" w-4/12   absolute my-26 mx-auto top-0 right-0 left-0 bg-black/80  text-white flex flex-col px-20  rounded-lg bg- ">
+                className=" w-full xl:w-4/12 md:w-5/12 absolute my-36 md:my-26 mx-auto top-0 right-0 left-0 bg-black/80  text-white flex flex-col px-20  rounded-lg bg- ">
 
-                <h1 className="font-bold text-3xl mt-8 mb-4 "> {toggleSignIn ? "Sign In" : "Sign Up"}</h1>
+                <h1 className="font-bold text-3xl mt-6 mb-4 "> {toggleSignIn ? "Sign In" : "Sign Up"}</h1>
 
                 {!toggleSignIn
                     &&
@@ -113,10 +113,10 @@ const Login = () => {
 
                 <button
                     onClick={SubmitFormData}
-                    className="p-2 mx-auto my-4 bg-red-700 hover:bg-red-800 rounded-md w-full text-bold ">
+                    className="p-2 mx-auto  bg-red-700 hover:bg-red-800 rounded-md w-full text-bold ">
                     {toggleSignIn ? "Sign In" : "Sign Up"} </button>
 
-                <div className="my-10 cursor-pointer text-white font-bold" onClick={toggleSignInForm}>
+                <div className="my-6 cursor-pointer text-white font-bold" onClick={toggleSignInForm}>
                     {toggleSignIn ? "New to Netflix? SignUp" : "Already a User? SignIn"}
 
                 </div>

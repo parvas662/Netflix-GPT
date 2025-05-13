@@ -33,10 +33,9 @@
     - Fetched gptMoviesSuggestions from TMDB
     - Created gptSlice added data
     - Build suggestion container
-    - Memoization
-    - Added .env file
-    - Adding .env file to gitignore
-
+    - Memoization (not to load content everytime if its already available in store slice)
+    - Add .env file also to gitignore
+    - Add responsiveness
 
 # Features >>
     - Login/signUp 

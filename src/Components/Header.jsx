@@ -82,7 +82,7 @@ const Header = () => {
                     {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier} > {lang.name} </option>)}
                 </select>}
                 {/*GPT search Button */}
-                <button className="hidden md:block cursor-pointer px-4 py-1 rounded-md bg-purple-800  "
+                <button className="hidden md:block cursor-pointer px-4 py-1 rounded-md bg-red-600 text-white"
                     onClick={handleGptSearchView} >
                     {toggleGptSearch ? "Home " : "GPT Search"}
                 </button>
@@ -93,13 +93,13 @@ const Header = () => {
                     <img className="w-12 h-13 py-1 rounded-md "
                         src={user.photoURL} alt="userIcon" />
                     <span
-                        className="material-symbols-outlined  text-white py-3 cursor-pointer hover:text-red-700"
+                        className="material-symbols-outlined font-extrabold text-3xl text-white flex self-center cursor-pointer hover:text-red-700"
                         onClick={handleDropDown}
                     >
-                        ex
+                        ⋮
                     </span>
                     { isDropdownClicked && (
-                        <div className="bg-black/70 absolute top-12 sm:md:top-16 mr-2 sm:md:mr-7 w-27 ">
+                        <div className="bg-black/80 absolute top-12 sm:md:top-16 mr-2 sm:md:mr-7 w-27 ">
                             <h1 className=" text-white text-opacity-60 font-bold p-2 mx-2 rounded-xl hover:text-red-700">
                                 {user.displayName}
                             </h1>
