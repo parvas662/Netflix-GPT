@@ -9,7 +9,7 @@ const MovieList = ({ title, movies }) => {
             <div className="flex overflow-auto custom-scroll p-1  ">
                 <div className=" flex custom-scroll ">
                     {movies && movies.map((movie) =>
-                        <MovieCard key={movie.id} posterPath={movie.poster_path} movieTitle={movie.original_title} />
+                        <MovieCard key={movie.id} id={movie.id} posterPath={movie.poster_path} movieTitle={movie.original_title} />
                     )} {/* lsit of movies */}
                 </div>
             </div>

@@ -1,13 +1,22 @@
+import { Navigate, useNavigate } from "react-router-dom"
 
 
-const VideoTitle = ({ title, overview }) => {
+const VideoTitle = ({ movieId , title, overview }) => {
+
+    const navigate = useNavigate();
+    const handleClick = (movieId)=>{ 
+        navigate(`/browse/${movieId}`)
+    }
+
     return (
         <div className="absolute w-fit  top-40 left-4 sm:md:top-50 sm:md:left-11  text-white/80   ">
                 <h1 className="text-2xl w-fit sm:md:text-4xl font-bold " >{title}</h1>
                 <p className=" hidden sm:hidden md:hidden xl:block sm:md:py-6 sm:md:text-sm md:pr-6 sm:w-[40%] md:w-[50%] xl:w-[40%]">{overview}</p>
 
                 <div className="w-fit  flex gap-3 mt-4 md:mt-4 xl:mt-0 ">
-                    <button className="outline-0 text-black cursor-pointer px-2 md:px-8  md:py-2 bg-white hover:bg-white/80 flex items-center  font-medium rounded-sm">
+                    <button
+                        onClick={()=>handleClick(movieId)}
+                     className="outline-0 text-black cursor-pointer px-2 md:px-8  md:py-2 bg-white hover:bg-white/80 flex items-center  font-medium rounded-sm">
                         <svg className="w-6" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 123.958 123.959" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"> </g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g><path d="M38.217,1.779c-3.8-3.8-10.2-1.1-10.2,4.2v112c0,5.3,6.4,8,10.2,4.2l56-56c2.3-2.301,2.3-6.101,0-8.401L38.217,1.779z"></path> </g> </g></svg>
                         Play </button>
 

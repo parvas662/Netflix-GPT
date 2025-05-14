@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +12,7 @@ import { changeLanguage } from '../redux-store/configSlice';
 
 
 const Header = () => {
+    const location = useLocation(); // to get the path url
     const user = useSelector((store) => store.userData)
     const toggleGptSearch = useSelector(store => store.gpt.showGptSearch)
     const [isDropdownClicked, setIsDropdownClicked] = useState(false)
@@ -58,6 +59,8 @@ const Header = () => {
 
     const handleGptSearchView = () => {
         // toggling GPT Search.
+        if(location.pathname !== "/browse")
+            navigate("/browse") 
         dispatch(toggleGptSearchView());
         setIsDropdownClicked(false)
     }
@@ -71,9 +74,16 @@ const Header = () => {
         console.log(isDropdownClicked);
         setIsDropdownClicked(!isDropdownClicked);
     };
+    const handleImageClick = ()=>{
+        if (toggleGptSearch == true) {
+            dispatch(toggleGptSearchView())
+        };
+        navigate('/browse')
+    }
     return (
-        <div className=" absolute py-2 sm:md:pr-10 sm:md:pl-5 w-[100%] bg-gradient-to-b from-black  via-black/80 to-transparent z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
-            <img onClick={handleGptSearchView} className='w-48 sm:md:w-44 cursor-pointer  ' src={Netflix_Logo_PMS} alt="Netflix-Logo" />
+        <div className=" absolute py-2 sm:md:pr-10 sm:md:pl-5 w-[100%] bg-gradient-to-b from-black  via-black/60 to-transparent z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
+            <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
+                src={Netflix_Logo_PMS} alt="Netflix-Logo" />
             {(user) && <div className='flex items-center gap-3 py-2 sm:md:mr-22'>
 
                 {/* select box to chose prefered language */}
@@ -99,12 +109,12 @@ const Header = () => {
                         ⋮
                     </span>
                     { isDropdownClicked && (
-                        <div className="bg-black/80 absolute top-12 sm:md:top-16 mr-2 sm:md:mr-7 w-27 ">
+                        <div className="bg-black/80 absolute top-12 cursor-pointer sm:md:top-16 mr-2 sm:md:mr-7 w-27 ">
                             <h1 className=" text-white text-opacity-60 font-bold p-2 mx-2 rounded-xl hover:text-red-700">
                                 {user.displayName}
                             </h1>
                             <button
-                                className=" text-white text-opacity-60 font-bold p-2 mx-2 rounded-xl hover:text-red-700"
+                                className="cursor-pointer text-white text-opacity-60 font-bold p-2 mx-2 rounded-xl hover:text-red-700"
                                 onClick={handleGptSearchView}
                             >
                                 {toggleGptSearch ? "Home " : "GPT Search"}
