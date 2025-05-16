@@ -81,7 +81,7 @@ const Header = () => {
         navigate('/browse')
     }
     return (
-        <div className=" absolute py-2 sm:md:pr-10 sm:md:pl-5 w-[100%] bg-gradient-to-b from-black  via-black/60 to-transparent z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
+        <div className=" absolute sm:md:pr-10 sm:md:pl-5 w-[100%] bg-gradient-to-b from-black  via-black/60 to-transparent z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
             <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
                 src={Netflix_Logo_PMS} alt="Netflix-Logo" />
             {(user) && <div className='flex items-center gap-3 py-2 sm:md:mr-22'>
@@ -99,8 +99,8 @@ const Header = () => {
 
             
             {(user) &&
-                <div className='absolute top-0 right-4 my-2 text-sm sm:md:text-sm py-3 flex gap-3 sm:md:mr-4 justify-center'>
-                    <img className="w-12 h-13 py-1 rounded-md "
+                <div className='absolute top-0 right-4 my-2 text-sm sm:md:text-sm py-2 flex gap-3 sm:md:mr-4 justify-center'>
+                    <img className="w-12 h-13  rounded-md "
                         src={user.photoURL} alt="userIcon" />
                     <span
                         className="material-symbols-outlined font-extrabold text-3xl text-white flex self-center cursor-pointer hover:text-red-700"

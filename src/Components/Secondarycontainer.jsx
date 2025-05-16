@@ -6,9 +6,9 @@ const SecondaryContainer = () => {
     
    //console.log("popular",movies)
     return (
-        <div className="bg-black ">
+        <div className="bg-black  ">
             {/*MovieList component  */}
-            <div className=" relative xl:-top-80 md:-top-35 overflow-hidden sm:-top-20 sm:md:pl-5 -mt-5 z-20">
+            <div className=" relative top-4 xl:-top-80 md:-top-35 overflow-hidden sm:-top-20 sm:md:pl-5 -mt-5 z-20">
                 <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
                 <MovieList title={"UpComing "} movies={movies.upComingMovies} />
                 <MovieList title={"Top Rated "} movies={movies.topRatedMovies} />

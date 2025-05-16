@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-
+ 
 export const API_Options = {
     method: 'GET',
     headers: {
