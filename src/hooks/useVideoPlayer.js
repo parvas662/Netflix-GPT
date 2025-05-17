@@ -14,10 +14,9 @@ const useVideoPlayer = (vId)=>{
     const getMovieTrailer = async () => {
         const data = await fetch(`https://api.themoviedb.org/3/movie/${vId.movieId}/videos?language=en-US`, API_Options)
         const json = await data.json();
-        console.log(json)
         const filterData = json?.results?.filter(video => (video.type === "Trailer" || video.type === "trailer" || video.type === "Teaser"));
         const trailer = filterData[0] 
-        console.log("filterData",trailer)
+        //console.log("filterData",trailer)
         dispatch(addVideoPlayer(trailer))
         const detail = await fetch(`https://api.themoviedb.org/3/movie/${vId.movieId}?language=en-US`,API_Options)
         const jsonDetail = await detail.json();
@@ -26,8 +25,9 @@ const useVideoPlayer = (vId)=>{
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
        (!videoPlayer) && getMovieTrailer(); 
-    }, [])
+    }, [vId])
 
 }
 

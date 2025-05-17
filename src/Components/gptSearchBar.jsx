@@ -44,8 +44,8 @@ export const GptSeachBar = () => {
     }
 
     return (
-        <div className="absolute top-[22%] md:top-[15%]  h-12 w-full  flex md:justify-center " >
-            <form className=" flex  justify-center gap-1 w-full z-30  "
+        <div className="absolute top-42 md:top-32 h-12  md:h-10 w-full  flex md:justify-center " >
+            <form className=" flex  justify-center gap-1 w-full z-12  "
                 onSubmit={(e) => e.preventDefault()}
             >
                 <input
@@ -57,7 +57,7 @@ export const GptSeachBar = () => {
 
                 <button
                     onClick={handleGptSearch}
-                    className="p-3 md:w-34 bg-red-700 text-center text-sm font-bold hover:bg-red-600 text-white rounded-xl">
+                    className="p-3 md:p-2 md:w-34 bg-red-700 text-center text-sm font-bold hover:bg-red-600 text-white rounded-xl">
                     {lang[language].search}
                 </button>
             </form>

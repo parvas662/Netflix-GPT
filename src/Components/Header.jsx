@@ -70,8 +70,7 @@ const Header = () => {
         //console.log(e.target.value)
         dispatch(changeLanguage(e.target.value))
     }
-    const handleDropDown = () => {
-        console.log(isDropdownClicked);
+    const handleDropDown = () => { 
         setIsDropdownClicked(!isDropdownClicked);
     };
     const handleImageClick = ()=>{
@@ -81,26 +80,26 @@ const Header = () => {
         navigate('/browse')
     }
     return (
-        <div className=" absolute sm:md:pr-10 sm:md:pl-5 w-[100%] bg-gradient-to-b from-black  via-black/60 to-transparent z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
+        <div className="absolute sm:md:pr-10 sm:md:pl-2 w-[100%] backdrop-blur-[20px] bg-[hsla(0,0%,6%,0.8)] z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
             <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
                 src={Netflix_Logo_PMS} alt="Netflix-Logo" />
-            {(user) && <div className='flex items-center gap-3 py-2 sm:md:mr-22'>
+            {(user) && <div className='flex items-center gap-3 py-2 sm:md:mr-18 xl:22'>
 
                 {/* select box to chose prefered language */}
                 {toggleGptSearch && <select
-                    onChange={handleLanguageChange} className="top-12 bg-gray-600 px-3 py-1 text-white outline-none rounded-md">
+                    onChange={handleLanguageChange} className="top-12 bg-gray-500 px-3 py-1 text-white/70 outline-none rounded-md">
                     {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier} > {lang.name} </option>)}
                 </select>}
                 {/*GPT search Button */}
-                <button className="hidden md:block cursor-pointer px-4 py-1 rounded-md bg-red-600 text-white"
+                <button className="hidden md:block cursor-pointer px-4 py-1 rounded-md  hover:border-1  hover:text-white text-white/90"
                     onClick={handleGptSearchView} >
                     {toggleGptSearch ? "Home " : "GPT Search"}
                 </button>
 
             
             {(user) &&
-                <div className='absolute top-0 right-4 my-2 text-sm sm:md:text-sm py-2 flex gap-3 sm:md:mr-4 justify-center'>
-                    <img className="w-12 h-13  rounded-md "
+                <div className='absolute top-0 right-4 my-1 text-sm sm:md:text-sm py-3 flex gap-3 sm:md:mr-4 justify-center'>
+                    <img className="w-10 h-10 rounded-md "
                         src={user.photoURL} alt="userIcon" />
                     <span
                         className="material-symbols-outlined font-extrabold text-3xl text-white flex self-center cursor-pointer hover:text-red-700"
@@ -109,9 +108,9 @@ const Header = () => {
                         ⋮
                     </span>
                     { isDropdownClicked && (
-                        <div className="bg-black/80 absolute top-12 cursor-pointer sm:md:top-16 mr-2 sm:md:mr-7 w-27 ">
+                        <div className="bg-black/80 absolute top-12 cursor-pointer sm:md:top-16  sm:md:mr-15 w-32 ">
                             <h1 className=" text-white text-opacity-60 font-bold p-2 mx-2 rounded-xl hover:text-red-700">
-                                {user.displayName}
+                                {user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)}
                             </h1>
                             <button
                                 className="cursor-pointer text-white text-opacity-60 font-bold p-2 mx-2 rounded-xl hover:text-red-700"

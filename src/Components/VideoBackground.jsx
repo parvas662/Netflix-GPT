@@ -12,6 +12,8 @@ const VideoBackground = (movieId) => {
             title="YouTube video player" 
             allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             ></iframe>
+            
+            <div className="aspect-video w-full bg-gradient-to-r from-black/50  absolute top-18 "></div>
         </div>
     )
 }

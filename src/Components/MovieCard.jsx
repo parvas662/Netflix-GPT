@@ -10,11 +10,11 @@ const MovieCard = ({id,posterPath,movieTitle})=>{
     if (!posterPath) return null
     
     const handleClick = (id)=>{
-        console.log(id)
+
         navigate(`/browse/${id}`)
     }
     return (
-        <div className="w-48 pr-3 ">
+        <div className="w-48 pr-3 my-1">
             <img onClick ={()=>{handleClick(id)}} className="hover:rounded-xl rounded-md cursor-pointer hover:scale-103" src={Image_CDN_Url + posterPath} alt={movieTitle} />
         </div>
     )
