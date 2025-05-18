@@ -74,10 +74,11 @@ const Header = () => {
         setIsDropdownClicked(!isDropdownClicked);
     };
     const handleImageClick = ()=>{
-        if (toggleGptSearch == true) {
+        if (user && toggleGptSearch === true ) {
             dispatch(toggleGptSearchView())
         };
-        navigate('/browse')
+        if (user){
+            navigate('/browse')}
     }
     const handleWatchList = ()=>{
         navigate('/watchlist')
@@ -88,14 +89,14 @@ const Header = () => {
                 <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
                 src={Netflix_Logo_PMS} alt="Netflix-Logo" />
 
-                <div
+                {user && <div
                     onClick={handleWatchList} 
                     className= " md:flex cursor-pointer -ml-2 md:ml-8 lg:ml-8  items-center  text-white hover:text-white text-lg hover:border-2  md:border-white/40 lg:border-white/40 xl:border-white/40 h-fit py-1 px-2 pr-3 rounded-xl">  
                         <svg className='hover:border-white/60 hover:border-2  hover:md:border-0 hover:lg:border-0 hover:xl:border-0 w-7 text-white/70 hover:text-white md:text-white lg:text-white stroke-amber-300 md:h-5 lg:h-5 stroke-2 ' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="currentStroke" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5v14m-7-7h14" stroke="currentColor" strokeWidth="currentStroke" strokeLinecap="round" strokeLinejoin="round">
                         </path> </svg>
                     <span className=' hidden md:block lg:block xl:block'> Watchlist </span> 
-                </div>
+                </div>}
 
             </div>
             {(user) && <div className='flex items-center gap-3 py-2 sm:md:mr-18 xl:22'>

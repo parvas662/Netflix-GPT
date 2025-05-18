@@ -105,12 +105,18 @@ const Login = () => {
 
                 <input
                     ref={password}
-                    className=" border-1 border-amber-50 rounded-md px-3 py-4 my-3" type="password"
+                    className=" border-1 border-amber-50 rounded-md px-3 py-4 mt-3 " type="password"
                     placeholder="Password"
                     autoComplete="current-password" />
 
                 <p className="text-red-700 font-bold text-wrap py-2">{errorMessage}</p>
-
+                {toggleSignIn && <div>
+                    <p className="flex flex-col text-white/60 mb-2"> 
+                        <span>Email: Testuser@gmail.com</span>
+                        <span>Password: Test@123</span>
+                    </p>
+                </div> 
+                }
                 <button
                     onClick={SubmitFormData}
                     className="p-2 mx-auto  bg-red-700 hover:bg-red-800 rounded-md w-full text-bold ">
@@ -120,6 +126,7 @@ const Login = () => {
                     {toggleSignIn ? "New to Netflix? SignUp" : "Already a User? SignIn"}
 
                 </div>
+                
             </form>
 
         </div>

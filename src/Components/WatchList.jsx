@@ -6,12 +6,11 @@ import { RemoveWatchlistItem } from "../redux-store/watchlistSlice";
 const WatchList = () => {
     const [toggleWatchList, settoggleWatchList] = useState(false);
     const watchListMovies = useSelector(store => store.watchlist.movielist)  // used in watchlistmoviecard
+    
     const [selectIds ,setSelectIds] = useState([]); // used in watchlistmoviecard
     const dispatch = useDispatch();
 
-    const handleClick = () => {
-        console.log("toggleWatchList", toggleWatchList) 
-        console.log("selectIds",selectIds)
+    const handleClick = () => { 
         settoggleWatchList(!toggleWatchList)
     }
     const handleRemove = () => {

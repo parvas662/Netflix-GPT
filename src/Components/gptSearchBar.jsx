@@ -29,17 +29,17 @@ export const GptSeachBar = () => {
             contents: getQuery,
         });
 
-        console.log("gptResults", gptResults.text)
+        //console.log("gptResults", gptResults.text)
 
         // take a movie and search in tmdb server. 
         const gptMovie = gptResults.text.split(",")
-        console.log("gptMovies", gptMovie)
+        //console.log("gptMovies", gptMovie)
         const promiseArray = gptMovie.map((movie) => searchMovieTMDB(movie));
         const tmdbResults = await Promise.all(promiseArray)
         // storing data into redux store
 
         dispatch(addGptSearchResult(tmdbResults))
-        console.log("tmdb", tmdbResults)
+       // console.log("tmdb", tmdbResults)
 
     }
 

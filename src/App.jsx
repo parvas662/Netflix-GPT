@@ -7,7 +7,7 @@ function App() {
   return (
     <div >
       <Header />
-      <div className='min-h-screen'>
+      <div className=''>
         <Outlet />
       </div>
       <Footer/>

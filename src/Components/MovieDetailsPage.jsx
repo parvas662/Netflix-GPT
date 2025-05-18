@@ -21,8 +21,7 @@ const MovieDetailsPage = () => {
     //console.log("detail",video)
 
     const handleAddWatchlist = () => {
-        dispatch(addWatchListItem(detail))
-        console.log("added")
+        dispatch(addWatchListItem(detail)) 
         setaddRemoveToWatchlist(!addRemoveToWatchlist)
         alert("Movie Added Successfully.")
 

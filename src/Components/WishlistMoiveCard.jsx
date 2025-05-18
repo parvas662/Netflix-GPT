@@ -15,8 +15,7 @@ const WishlistMoiveCard = ({movies, toggleWatchList, selectIds, setSelectIds}) =
         setSelectIds((prev) => prev.includes(movieId) ? prev.filter((id) => id !== movieId) : [...prev, movieId]
   ); 
     }
-        useEffect(() => {
-            console.log("Updated selectIds:", selectIds);
+        useEffect(() => { 
             }, [selectIds])
 
     return (
