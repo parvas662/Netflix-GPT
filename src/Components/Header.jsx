@@ -8,7 +8,7 @@ import { auth } from '../Utils/firebase';
 import { addUser, removeUser } from '../redux-store/userSlice';
 import { toggleGptSearchView } from '../redux-store/gptSlice';
 import { SUPPORTED_LANGUAGES } from '../Utils/constants';
-import { changeLanguage } from '../redux-store/configSlice';
+import { changeLanguage } from '../redux-store/configSlice'; 
 
 
 const Header = () => {
@@ -79,31 +79,50 @@ const Header = () => {
         };
         navigate('/browse')
     }
+    const handleWatchList = ()=>{
+        navigate('/watchlist')
+    }
     return (
         <div className="absolute sm:md:pr-10 sm:md:pl-2 w-[100%] backdrop-blur-[20px] bg-[hsla(0,0%,6%,0.8)] z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
-            <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
+            <div className='flex  md:gap-0 items-center'>
+                <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
                 src={Netflix_Logo_PMS} alt="Netflix-Logo" />
+
+                <div
+                    onClick={handleWatchList} 
+                    className= " md:flex cursor-pointer -ml-2 md:ml-8 lg:ml-8  items-center  text-white hover:text-white text-lg hover:border-2  md:border-white/40 lg:border-white/40 xl:border-white/40 h-fit py-1 px-2 pr-3 rounded-xl">  
+                        <svg className='hover:border-white/60 hover:border-2  hover:md:border-0 hover:lg:border-0 hover:xl:border-0 w-7 text-white/70 hover:text-white md:text-white lg:text-white stroke-amber-300 md:h-5 lg:h-5 stroke-2 ' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="currentStroke" stroke-linecap="round" stroke-linejoin="round">
+                        </path> </svg>
+                    <span className=' hidden md:block lg:block xl:block'> Watchlist </span> 
+                </div>
+
+            </div>
             {(user) && <div className='flex items-center gap-3 py-2 sm:md:mr-18 xl:22'>
 
                 {/* select box to chose prefered language */}
-                {toggleGptSearch && <select
+                { toggleGptSearch && <select
                     onChange={handleLanguageChange} className="top-12 bg-gray-500 px-3 py-1 text-white/70 outline-none rounded-md">
                     {SUPPORTED_LANGUAGES.map((lang) => <option key={lang.identifier} value={lang.identifier} > {lang.name} </option>)}
-                </select>}
+                </select> }
+                
                 {/*GPT search Button */}
                 <button className="hidden md:block cursor-pointer px-4 py-1 rounded-md  hover:border-1  hover:text-white text-white/90"
                     onClick={handleGptSearchView} >
                     {toggleGptSearch ? "Home " : "GPT Search"}
                 </button>
+                
 
             
             {(user) &&
-                <div className='absolute top-0 right-4 my-1 text-sm sm:md:text-sm py-3 flex gap-3 sm:md:mr-4 justify-center'>
+                <div  onClick={handleDropDown}
+                className='absolute top-1 right-4 my-1 text-sm sm:md:text-sm py-3 flex gap-2 sm:md:mr-4 justify-center'>
+                    
                     <img className="w-10 h-10 rounded-md "
                         src={user.photoURL} alt="userIcon" />
                     <span
-                        className="material-symbols-outlined font-extrabold text-3xl text-white flex self-center cursor-pointer hover:text-red-700"
-                        onClick={handleDropDown}
+                        className=" hidden md:block lg:block xl:block material-symbols-outlined font-extrabold text-3xl text-white/70  flex self-center cursor-pointer hover:text-red-700"
+                       
                     >
                         ⋮
                     </span>

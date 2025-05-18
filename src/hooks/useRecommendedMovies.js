@@ -10,7 +10,6 @@ const useRecommendedMovies = (vId) => {
         const data =  await fetch(`https://api.themoviedb.org/3/movie/${vId.movieId}/recommendations?language=en-US&page=1`,
             API_Options) 
         const json = await data.json();
-        console.log("RECOMMNEDED",json)
         
         const tenMovies = json?.results.slice(0, 10); // Use only first 10
         dispatch(addRecommendedMovies(tenMovies))

@@ -36,6 +36,8 @@
     - Memoization (not to load content everytime if its already available in store slice)
     - Add .env file also to gitignore
     - Add responsiveness
+    - Add  Movie to Watchlist and WatchlistSlice 
+    - Add footer 
 
 # Features >>
     - Login/signUp 
