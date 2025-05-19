@@ -12,6 +12,7 @@ const WatchList = () => {
 
     const handleClick = () => { 
         settoggleWatchList(!toggleWatchList)
+        settoggleWatchList(!toggleWatchList)
     }
     const handleRemove = () => {
         
@@ -21,7 +22,7 @@ const WatchList = () => {
   };
 
     return (
-        <div className="w-screen h-screen bg-black/90 ">
+        <div className="w-screen  bg-black/90 ">
             <div className=" text-white pt-30 md:pb-12 md:px-20 w-screen flex md:items-center justify-between p-4">
                 <h1 className="text-4xl md:text-6xl font-bold ">Watchlist</h1>
                 <div className=" flex gap-2 ">
