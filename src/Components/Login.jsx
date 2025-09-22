@@ -14,7 +14,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const [toggleSignIn, settoggleSignIn] = useState(true)
     const [errorMessage, seterrorMessage] = useState('');
-  //  const navigate = useNavigate(); 
+    //  const navigate = useNavigate(); 
     const toggleSignInForm = () => {
         settoggleSignIn(!toggleSignIn)
     }
@@ -22,7 +22,8 @@ const Login = () => {
     const email = useRef(null);
     const password = useRef(null);
 
-    const SubmitFormData = () => { ;
+    const SubmitFormData = () => {
+        ;
         const err = ValidateData(toggleSignIn, fullname, email.current.value, password.current.value)
         seterrorMessage(err)
         if (err) return
@@ -68,7 +69,7 @@ const Login = () => {
                     // Signed in 
                     const user = userCredential.user;
                     //console.log(user)
-                 //   navigate("/browse")
+                    //   navigate("/browse")
                 })
                 .catch((error) => {
                     // const errorCode = error.code;
@@ -81,14 +82,15 @@ const Login = () => {
 
     return (
         <div >
-            <img className="w-screen h-screen fixed bottom-0 object-cover " src={backgroundImage} />
-
+            <div className="w-screen h-screen bg-black/80">  </div>
             <form
                 onSubmit={(e) => { e.preventDefault() }}
-                className=" w-full xl:w-4/12 md:w-5/12 absolute my-36 md:my-26 mx-auto top-0 right-0 left-0 bg-black/80  text-white flex flex-col px-20  rounded-lg bg- ">
+                className=" w-full xl:w-5/12 md:w-5/12 absolute my-36 md:my-26 mx-auto top-0 right-0 left-0 bg-black/8  text-white flex flex-col px-20  rounded-lg  ">
 
-                <h1 className="font-bold text-3xl mt-6 mb-4 "> {toggleSignIn ? "Sign In" : "Sign Up"}</h1>
-
+                <h1 className="font-bold text-white/80 text-3xl mt-6 mb-8"> {toggleSignIn ?  (<p>
+                Welcome back to Movie<span className=" text-red-500">Nest</span>
+                 <p className=" font-medium text-[14px]">  Let's get you signed in</p>
+                </p>)   : "Create Account"}</h1> 
                 {!toggleSignIn
                     &&
                     <input
@@ -111,11 +113,11 @@ const Login = () => {
 
                 <p className="text-red-700 font-bold text-wrap py-2">{errorMessage}</p>
                 {toggleSignIn && <div>
-                    <p className="flex flex-col text-white/60 mb-2"> 
+                    <p className="flex flex-col text-white/60 mb-2">
                         <span>Email: Testuser@gmail.com</span>
                         <span>Password: Test@123</span>
                     </p>
-                </div> 
+                </div>
                 }
                 <button
                     onClick={SubmitFormData}
@@ -123,10 +125,18 @@ const Login = () => {
                     {toggleSignIn ? "Sign In" : "Sign Up"} </button>
 
                 <div className="my-6 cursor-pointer text-white font-bold" onClick={toggleSignInForm}>
-                    {toggleSignIn ? "New to Netflix? SignUp" : "Already a User? SignIn"}
+                    {toggleSignIn ?  (
+                        <p className="text-white/80">
+                            New to MovieNest? <span className="underline text-red-500 font-semibold">Sign Up</span>
+                        </p>
+                    ) : (
+                        <p className="text-white/80">
+                            Already a User? <span className="underline text-red-500 font-semibold">Sign In</span>
+                        </p>
+                    )}
 
                 </div>
-                
+
             </form>
 
         </div>

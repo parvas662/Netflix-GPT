@@ -1,15 +1,14 @@
 import GptMovieSuggestion from "./GptMovieSuggestion"
 import { GptSeachBar } from "./gptSearchBar"
-
-import backgroundImage from '../assets/backgroundImage.jpg';
+ 
+import { SUPPORTED_LANGUAGES } from "../Utils/constants"; 
 
 // this gptsearch is used in browse page.
 export const GptSearch =()=>{  
+ 
     return (
-        <div >
-            <div className=" ">
-                <img className="fixed h-screen w-[100%] object-cover " src={backgroundImage} />
-            </div> 
+        <div  className= "w-screen h-screen bg-black/97">
+             
             <GptSeachBar/>
             <GptMovieSuggestion/> 
         </div>

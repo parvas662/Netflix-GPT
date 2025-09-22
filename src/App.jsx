@@ -7,10 +7,10 @@ function App() {
   return (
     <div >
       <Header />
-      <div className=''>
+      <div className='w-screen'>
         <Outlet />
-      </div>
-      <Footer/>
+      </div> 
+      <Footer /> 
     </div>
   )
 }

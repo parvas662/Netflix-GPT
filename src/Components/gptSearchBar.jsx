@@ -3,8 +3,9 @@ import { useRef } from "react";
 import { lang } from "../Utils/languageConstants"
 import { useDispatch, useSelector } from "react-redux"
 import ai from "../Utils/GeminiAi";
-import { API_Options } from "../Utils/constants";
+import { API_Options, SUPPORTED_LANGUAGES } from "../Utils/constants";
 import { addGptSearchResult } from "../redux-store/moviesSlice";
+import { changeLanguage } from "../redux-store/configSlice";
 
 export const GptSeachBar = () => {
     const language = useSelector(store => store.config.lang)
@@ -21,7 +22,7 @@ export const GptSeachBar = () => {
 
     const handleGptSearch = async () => {
         //  console.log(SearchText?.current.value);
-        // Make an api call to openAi gpt and get movies Result
+        // Make an api call to geminiAi gpt and get movies Result
         const getQuery = "Act as a Movie Recommendation System and DIRECTLY TELL MOVIES NAME NO OTHER TEXT and also dont show any counting in front of movies and if you are unable to find any movie then return '0' and if" + SearchText?.current.value + "is the name of the movie then tell me name of all the parts of this movie, OR suggest some movies for the query" + SearchText?.current.value + "only give me names of 10 hindi OR english movie , comma seprated like exmaple result given ahead,  I WANT DIRECTLY MOVIES NAME NO OTHER TEXT and if you are unable to find any movie then return 'null'. Example result: don, spiderman, superman, hell";
 
         const gptResults = await ai.models.generateContent({
@@ -39,12 +40,11 @@ export const GptSeachBar = () => {
         // storing data into redux store
 
         dispatch(addGptSearchResult(tmdbResults))
-       // console.log("tmdb", tmdbResults)
-
-    }
+       // console.log("tmdb", tmdbResults) 
+    }  
 
     return (
-        <div className="absolute top-42 md:top-32 h-12  md:h-10 w-full  flex md:justify-center " >
+        <div className="absolute top-42 md:top-32 h-12  md:h-10 w-full  flex md:justify-center " > 
             <form className=" flex  justify-center gap-1 w-full z-12  "
                 onSubmit={(e) => e.preventDefault()}
             >

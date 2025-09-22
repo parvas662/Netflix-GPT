@@ -19,7 +19,7 @@ const Header = () => {
     // Dispatching an action to appStore when user signup/signIn or logout. we can write it anywhere but inside or redux provider.
     const dispatch = useDispatch();
     const navigate = useNavigate(); // this hook should be inside of react router provider.         
-
+    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {  // this will work only when user signIn/SignUp. it will dispatch the action to appStore.
             if (user) {
@@ -86,9 +86,13 @@ const Header = () => {
     return (
         <div className="absolute sm:md:pr-10 sm:md:pl-2 w-[100%] backdrop-blur-[20px] bg-[hsla(0,0%,6%,0.8)] z-10 flex items-center md:flex sm:md:flex-row sm:md:justify-between ">
             <div className='flex  md:gap-0 items-center'>
-                <img onClick={handleImageClick} className='w-48 sm:md:w-44 cursor-pointer' 
-                src={Netflix_Logo_PMS} alt="Netflix-Logo" />
+                
+                <h1 onClick={handleImageClick}
+                 className=' py-5 text-2xl md:xl:text-3xl font-bold px-3 cursor-pointer 
+                 transition delay-100 duration-300 ease-in-out hover:-translate hover:scale-110 text-shadow-lg/20 text-shadow-red-500
+bg-gradient-to-r from-purple-500 via-red-500 to-pink-500 text-transparent bg-clip-text
 
+                 '>MOVIENEST</h1>
                 {user && <div
                     onClick={handleWatchList} 
                     className= " md:flex cursor-pointer -ml-2 md:ml-8 lg:ml-8  items-center  text-white hover:text-white text-lg hover:border-2  md:border-white/40 lg:border-white/40 xl:border-white/40 h-fit py-1 px-2 pr-3 rounded-xl">  

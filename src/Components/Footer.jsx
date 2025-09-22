@@ -9,8 +9,8 @@ const Footer = ()=>{
      //   <div className="w-screen  bottom-0  bg-black"> 
            
    return (
-      <div className="bg-black w-full text-white flex flex-col justify-center text-center gap-12 p-20 text-sm font-normal">
-      <div className="flex  justify-center gap-6">
+      <div className="bg-black  w-full text-white flex flex-col justify-center text-center gap-8 p-8 text-sm font-normal">
+      <div className="flex  justify-center gap-6 ">
 
         <a  target="_blank" href="https://x.com/m_vishusharma">
             <img src={xLogo} alt="GitHub" className="w-8 h-8 bg-amber-50  hover:scale-110 transition rounded-full" />
