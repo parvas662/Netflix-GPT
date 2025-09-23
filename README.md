@@ -1,4 +1,4 @@
-# Netflix-GPT >>
+# MovieNest >>
     - using Vite
     - Confiured TailwindCSS
     - Header
