@@ -4,8 +4,7 @@ import { lang } from "../Utils/languageConstants"
 import { useDispatch, useSelector } from "react-redux"
 import ai from "../Utils/GeminiAi";
 import { API_Options, SUPPORTED_LANGUAGES } from "../Utils/constants";
-import { addGptSearchResult } from "../redux-store/moviesSlice";
-import { changeLanguage } from "../redux-store/configSlice";
+import { addGptSearchResult } from "../redux-store/moviesSlice"; 
 
 export const GptSeachBar = () => {
     const language = useSelector(store => store.config.lang)
@@ -44,7 +43,7 @@ export const GptSeachBar = () => {
     }  
 
     return (
-        <div className="absolute top-42 md:top-32 h-12  md:h-10 w-full  flex md:justify-center " > 
+        <div className=" absolute top-42 md:top-32 h-12  md:h-10 w-full  flex md:justify-center " > 
             <form className=" flex  justify-center gap-1 w-full z-12  "
                 onSubmit={(e) => e.preventDefault()}
             >

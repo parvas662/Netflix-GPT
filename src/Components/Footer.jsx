@@ -9,7 +9,7 @@ const Footer = ()=>{
      //   <div className="w-screen  bottom-0  bg-black"> 
            
    return (
-      <div className="bg-black  w-full text-white flex flex-col justify-center text-center gap-8 p-8 text-sm font-normal">
+      <div className="bg-black w-full text-white flex flex-col justify-center text-center gap-8 p-8 text-sm font-normal">
       <div className="flex  justify-center gap-6 ">
 
         <a  target="_blank" href="https://x.com/m_vishusharma">

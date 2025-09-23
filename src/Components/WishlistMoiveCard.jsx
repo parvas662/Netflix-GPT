@@ -21,15 +21,15 @@ const WishlistMoiveCard = ({movies, toggleWatchList, selectIds, setSelectIds}) =
     return (
         <div>
             
-            <div className="w-screen object-cover pt-10  md:pt-0 lg:pt-0 px-20 flex flex-wrap gap-5 justify-start "> 
+            <div className="w-screen h-screen object-cover pt-10 md:pt-0 lg:pt-0 px-20 flex flex-wrap gap-5 justify-start "> 
                 
                 {movies && movies.map((movie) =>
                     <div className="relative w-48 h-fit hover:rounded-lg mb-10" key = {movie.id}>
                         <img onClick ={()=>{handleClick(movie.id)}}
-                             className=" hover:rounded-xl rounded-md cursor-pointer hover:scale-103 hover:border-4 hover:border-red-600 " src={Image_CDN_Url + movie.poster_path} alt={movie.original_title}/>
+                            loading="lazy" className=" hover:rounded-xl rounded-md cursor-pointer hover:scale-103 hover:border-4 hover:border-red-600 " src={Image_CDN_Url + movie.poster_path} alt={movie.original_title}/>
                         
                         { toggleWatchList &&
-                            <div className="backdrop-blur-[1px] md:backdrop-blur-3xl w-full h-full absolute top-0 ">
+                            <div className="backdrop-blur-[1px]  w-full h-full absolute top-0 ">
                             <input 
                             type = "checkbox" 
                             className = "absolute top-2 right-2 w-5 h-5 "   
@@ -38,7 +38,6 @@ const WishlistMoiveCard = ({movies, toggleWatchList, selectIds, setSelectIds}) =
                             /> 
                         </div> }
 
-
                     </div>  
                 )} {/* list of movies  checked = {selectIds.includes(movie.id)}
                 */}
@@ -46,7 +45,5 @@ const WishlistMoiveCard = ({movies, toggleWatchList, selectIds, setSelectIds}) =
         </div>
         )
     } 
-
-
-
+    
 export default WishlistMoiveCard;

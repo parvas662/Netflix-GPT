@@ -15,10 +15,10 @@ const useTopRatedMovies = ()=>{
         //console.log("topRAted",json);
         dispatch(addTopRatedMovies(json.results));
     }
-    
     useEffect(()=>{
        !topRatedMovies && getTopRated();
     },[])
+    
 
 }
 

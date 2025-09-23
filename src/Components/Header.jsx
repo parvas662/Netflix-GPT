@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'; 
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -89,8 +88,8 @@ const Header = () => {
                 
                 <h1 onClick={handleImageClick}
                  className=' py-5 text-2xl md:xl:text-3xl font-bold px-3 cursor-pointer 
-                 transition delay-100 duration-300 ease-in-out hover:-translate hover:scale-110 text-shadow-lg/20 text-shadow-red-500
-bg-gradient-to-r from-purple-500 via-red-500 to-pink-500 text-transparent bg-clip-text
+                 transition delay-150 duration-300 ease-in-out hover:-translate hover:scale-110 text-shadow-lg/20 text-shadow-red-500
+bg-gradient-to-r from-purple-500 via-red-500 to-red-500 text-transparent bg-clip-text
 
                  '>MOVIENEST</h1>
                 {user && <div

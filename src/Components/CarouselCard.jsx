@@ -7,7 +7,9 @@ const CarouselCard = ({movies}) =>{
     const navigate = useNavigate();
 
     const handleClick = (id)=>{
-        navigate(`/browse/${id}`)
+        setTimeout(() => {
+            navigate(`/browse/${id}`)
+        }, 500);
     }
 return (
         <div className="pt-10 md:pt-0 lg:pt-0 px-20 flex flex-wrap gap-5 justify-start "> 

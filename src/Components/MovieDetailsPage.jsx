@@ -50,7 +50,7 @@ const MovieDetailsPage = () => {
         (video || detail) && <div className="bg-black text-white">
             <div className="flex justify-between items-end pr-2 md:pr-10 ">
                 <div className="">
-                    <h1 className="px-5 md:px-8 md:xl:px-12 pt-25 text-2xl md:text-4xl text-white font-bold"> {detail?.original_title} </h1>
+                    <h1 className="px-5 md:px-8 md:xl:px-12 pt-25 text-2xl md:text-4xl text-white font-bold"> {detail?.title} </h1>
                     <div className="flex gap-2 px-5 pb-1 md:px-8 md:xl:px-12 pt-2 text-sm text-white/80">
                         <span>{month} {year}</span>
                         <span >•</span>

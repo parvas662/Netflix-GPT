@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { ValidateData } from "../Utils/validate";
-import backgroundImage from '../assets/backgroundImage.jpg';
 import { createUserWithEmailAndPassword, updateProfile, } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -81,16 +80,16 @@ const Login = () => {
     }
 
     return (
-        <div >
+        <div className="">
             <div className="w-screen h-screen bg-black/80">  </div>
             <form
                 onSubmit={(e) => { e.preventDefault() }}
                 className=" w-full xl:w-5/12 md:w-5/12 absolute my-36 md:my-26 mx-auto top-0 right-0 left-0 bg-black/8  text-white flex flex-col px-20  rounded-lg  ">
 
-                <h1 className="font-bold text-white/80 text-3xl mt-6 mb-8"> {toggleSignIn ?  (<p>
-                Welcome back to Movie<span className=" text-red-500">Nest</span>
-                 <p className=" font-medium text-[14px]">  Let's get you signed in</p>
-                </p>)   : "Create Account"}</h1> 
+                <h1 className="font-bold text-white/80 text-3xl mt-6 mb-8"> {toggleSignIn ? (<p>
+                    Welcome back to Movie<span className=" text-red-500">Nest</span>
+                    <p className=" font-medium text-[14px]">  Let's get you signed in</p>
+                </p>) : "Create Account"}</h1>
                 {!toggleSignIn
                     &&
                     <input
@@ -125,7 +124,7 @@ const Login = () => {
                     {toggleSignIn ? "Sign In" : "Sign Up"} </button>
 
                 <div className="my-6 cursor-pointer text-white font-bold" onClick={toggleSignInForm}>
-                    {toggleSignIn ?  (
+                    {toggleSignIn ? (
                         <p className="text-white/80">
                             New to MovieNest? <span className="underline text-red-500 font-semibold">Sign Up</span>
                         </p>

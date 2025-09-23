@@ -16,9 +16,8 @@ createRoot(document.getElementById('root')).render(
             <Routes>
                 <Route path='/' element={<App />}>
                     <Route path='/' element={<Login />}> </Route>
-                    <Route path='/browse' element={<Browse />}></Route>
-                        <Route path='/browse/:movieId' element={<MovieDetailsPage />}>
-                    </Route>
+                    <Route path='/browse' element={<Browse />}> </Route>
+                    <Route path='/browse/:movieId' element={<MovieDetailsPage />}> </Route>
                     <Route path='/watchlist' element={<WatchList />}> </Route>
                     
                 </Route>
